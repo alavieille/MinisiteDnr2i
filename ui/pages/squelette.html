@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title></title>
+        <title><?php echo $title; ?></title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="ui/css/main.css" media="all"/>
     </head>
     <body>
-        test
+        <header id="header"><!-- header -->
+            <?php echo $header; ?>
+          
+            
+        </header>
+        <div id="wrapper">
+            <?php echo $content; ?>
+        </div>
     </body>
 </html>
