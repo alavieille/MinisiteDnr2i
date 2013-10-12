@@ -65,7 +65,7 @@ body{
 /*** map ***/
 
 #map{
-    background-color:#505459;
+    background-color:#64B7C2;
     position:relative;
 }
 
@@ -74,7 +74,7 @@ body{
     height:700px;
     margin:auto;
     position: relative;
-    //overflow: hidden;
+    overflow: hidden;
 }
 
 #mapSlide{
@@ -85,8 +85,65 @@ body{
 
 #mapContent ul{
     position:relative;
-    width:220%;
+    width:200%;
+    padding: 0;
+    margin:0;
+    left: 0;
+    height: 100%;
+    list-style: none;
+    transition: left ease-in 0.8s; 
 }
 #mapContent ul li{
     float: left;
+    padding: 0;
+    margin:0;
+}
+
+#map .arrow{
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 38px;
+    margin-top: -19px;
+    display: none;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 1000;
+    opacity:0.5;
+    background: transparent url(../images/arrow.png) no-repeat;
+    text-align:justify;
+    padding-top:50px;
+    text-indent:5px;
+    transition: opacity linear 0.3s;
+    color:white;
+}
+
+
+#map .arrow:hover{
+    opacity:1;
+}
+
+
+#mapContent input{
+    display:none;
+}
+
+.sp-selector-1:checked ~ .arrow#arrowRight{
+    right: 15px;
+    display: block;
+    background-position: top right;
+}
+
+.sp-selector-2:checked ~ .arrow#arrowLeft{
+    left: 15px;
+    display: block;
+    background-position: top left;
+}
+
+input.sp-selector-1:checked ~ #mapSlide ul {
+    left: 0;
+}
+
+input.sp-selector-2:checked ~ #mapSlide ul {
+    left: -100%;
 }
