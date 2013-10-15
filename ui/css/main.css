@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.clearer{
+    height:0px;
+    clear:both;
+}
 
 body{
     background-color: #EAEAEA;
@@ -13,12 +17,21 @@ body{
     font-family: Helvetica, Arial, sans-serif;
 }
 
+#wrapper{
+    position:relative;
+    top:50px;
+}
 
-/*** header ***/
+/***************
+     header 
+***************/
 
 #header{
     background-color:white;
     height:50px;
+    position:fixed;
+    width:100%;
+    z-index:3;
 }
 
 /*** navigation ***/
@@ -43,7 +56,6 @@ body{
     margin-right:15px;
     font-size:1em;
     text-transform: uppercase;
-    vertical-align: middle;
     line-height: 50px;
     font-weight: normal;
 }
@@ -56,22 +68,34 @@ body{
 
 #header nav ul li:hover a{
     color:black;
-        font-weight: bold;
-    //font-weight: normal;
+    font-weight: bold;
 }
 
+/***************
+     map 
+***************/
 
-
-/*** map ***/
 
 #map{
     background-color:#64B7C2;
     position:relative;
 }
 
+#map #linkSource{
+    color:white;
+    margin-right:50px;
+    font-size:0.9em;
+    float:right;
+    color:#505459;
+    text-decoration:none;
+}
+
+#map #linkSource:hover{
+    color:white;
+}
 #mapContent{
     width:1024px;
-    height:700px;
+   // height:700px;
     margin:auto;
     position: relative;
     overflow: hidden;
@@ -93,6 +117,7 @@ body{
     list-style: none;
     transition: left ease-in 0.8s; 
 }
+
 #mapContent ul li{
     float: left;
     padding: 0;
@@ -118,11 +143,9 @@ body{
     color:white;
 }
 
-
 #map .arrow:hover{
     opacity:1;
 }
-
 
 #mapContent input{
     display:none;
@@ -146,4 +169,139 @@ input.sp-selector-1:checked ~ #mapSlide ul {
 
 input.sp-selector-2:checked ~ #mapSlide ul {
     left: -100%;
+}
+
+/***************
+     Accueil 
+***************/
+#presentation{
+    background-color:#eee;
+    z-index:-1;
+}
+#serie{
+    background-color:#D6D6D6;
+    z-index:-1;
+}
+
+
+#book{
+    background-color:#505459;
+    z-index:-1;
+}
+.sct-accueil h2{
+    color:white;
+    font-size:3em;
+    text-transform: uppercase;
+    line-height: 50px;
+    font-weight:normal;
+    text-align:center;
+    letter-spacing:10px;
+    margin:0;
+    padding: 100px 0;
+    position:relative;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));   
+    z-index:1;
+}
+
+.sct-accueil h2:before{                       
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity:0.6;
+    z-index:-1;
+    width:100%;
+    height:100%;
+    background-position:50% 0;
+    background-repeat: no-repeat;
+
+}
+
+.sct-accueil#presentation h2:before{   
+      background-image: url("../images/background/background_pres2.png");
+}
+
+.sct-accueil#serie h2:before{   
+      background-image: url("../images/background/background_pres.png");
+      background-color:#706153;
+}
+
+.sct-accueil#book h2:before{   
+      background-image: url("../images/background/background_pres3.png");
+      background-color:#858181;
+}
+
+.acc-content{
+    min-height:250px;
+    width:1036px;
+   // background-color:#505459;
+    margin:auto;
+    color:white;
+    padding:20px;
+}
+
+.acc-content p{
+    margin:0;
+    padding:10px;
+    letter-spacing: 1px;
+    color:#666;
+    width:500px;
+    display:table-cell;
+    line-height: 30px;
+    height:250px;
+    vertical-align: middle;
+    text-indent:10px;
+    text-align:justify;
+   // font-style:justify;
+}
+
+.acc-content p .emphase{
+    font-size:1.5em;
+    font-weight:bold;
+    clear:both;
+    color:#35393E;
+    text-indent: 50px;
+  
+}
+
+.acc-content p a{
+    color:black;
+}
+
+.acc-content p img{
+    float:left;
+    margin-right:20px;
+    margin-bottom:5px;
+}
+
+.acc-content p a:hover{
+    color:brown;
+}
+
+#serie .acc-content p{
+    color:#777777;
+}
+
+#serie .acc-content a{
+    color:#35393E;
+}
+
+
+#book .acc-content p{
+    color:#EAEAEA;
+}
+
+#book .acc-content a{
+    color:#ccc;
+}
+
+#book .acc-content p{
+    width:100%;
+ 
+ 
+}
+#book .acc-content img{
+    margin-left:30px;
+    float:right;
 }

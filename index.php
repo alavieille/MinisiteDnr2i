@@ -14,8 +14,11 @@ else {
 // switch action 
 switch($codeAction) {
     case "accueil" :
-        $content = file_get_contents("ui/fragments/map.frg.html");
+        $content = file_get_contents("informations/accueil.frg.html");
+    break;
     
+    case "carte" :
+        $content= file_get_contents("ui/fragments/map.frg.html");
     break;
         
 }
@@ -23,7 +26,7 @@ switch($codeAction) {
 
 $squelette = "ui/pages/squelette.html";$codeAction;
 $header = file_get_contents("ui/fragments/header.frg.html");
-$title = $codeAction;
+$title = ucfirst($codeAction)." - Games of Thrones";
 
 
 ob_start();
