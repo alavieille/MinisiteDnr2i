@@ -1,3 +1,16 @@
+/***********************
+         main.css 
+author : amaury lavieille 
+  --- Reset css
+0 --- Wrapper/Body
+1 --- Header 
+2 --- Map 
+3 --- Accueil 
+4 --- Auteur
+
+*********************/
+
+
 /*** restet css ****/
 
 * {
@@ -11,6 +24,9 @@
     clear:both;
 }
 
+/***************
+     Wrapper/Body
+***************/
 body{
     background-color: #EAEAEA;
     margin:0;
@@ -95,7 +111,7 @@ body{
 }
 #mapContent{
     width:1024px;
-   // height:700px;
+   /*height:700px;*/
     margin:auto;
     position: relative;
     overflow: hidden;
@@ -174,20 +190,7 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 /***************
      Accueil 
 ***************/
-#presentation{
-    background-color:#eee;
-    z-index:-1;
-}
-#serie{
-    background-color:#D6D6D6;
-    z-index:-1;
-}
 
-
-#book{
-    background-color:#505459;
-    z-index:-1;
-}
 .sct-accueil h2{
     color:white;
     font-size:3em;
@@ -218,24 +221,11 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 
 }
 
-.sct-accueil#presentation h2:before{   
-      background-image: url("../images/background/background_pres2.png");
-}
 
-.sct-accueil#serie h2:before{   
-      background-image: url("../images/background/background_pres.png");
-      background-color:#706153;
-}
-
-.sct-accueil#book h2:before{   
-      background-image: url("../images/background/background_pres3.png");
-      background-color:#858181;
-}
 
 .acc-content{
     min-height:250px;
     width:1036px;
-   // background-color:#505459;
     margin:auto;
     color:white;
     padding:20px;
@@ -253,7 +243,7 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     vertical-align: middle;
     text-indent:10px;
     text-align:justify;
-   // font-style:justify;
+   /*font-style:justify;*/
 }
 
 .acc-content p .emphase{
@@ -275,8 +265,32 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     margin-bottom:5px;
 }
 
-.acc-content p a:hover{
+
+/* section presentation */
+.sct-accueil#presentation h2:before{   
+      background-image: url("../images/background/background_pres2.png");
+}
+
+#presentation{
+    background-color:#eee;
+    z-index:-1;
+}
+
+#presentation .acc-content a:hover{
     color:brown;
+}
+
+
+/* section serie */
+
+.sct-accueil#serie h2:before{   
+      background-image: url("../images/background/background_pres.png");
+      background-color:#706153;
+}
+
+#serie{
+    background-color:#D6D6D6;
+    z-index:-1;
 }
 
 #serie .acc-content p{
@@ -287,13 +301,32 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     color:#35393E;
 }
 
+#serie .acc-content a:hover{
+    color:brown;
+}
+
+
+/* section book */
+#book{
+    background-color:#868686;
+    z-index:-1;
+}
+
+.sct-accueil#book h2:before{   
+      background-image: url("../images/background/background_pres3.png");
+      background-color:#858181;
+}
 
 #book .acc-content p{
     color:#EAEAEA;
 }
 
 #book .acc-content a{
-    color:#ccc;
+    color:white;
+}
+
+#book .acc-content a:hover{
+    color:#000;
 }
 
 #book .acc-content p{
@@ -304,4 +337,128 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 #book .acc-content img{
     margin-left:30px;
     float:right;
+}
+
+/***************
+     Auteur 
+***************/
+
+#bio,#oeuvres,#interview{
+    width:1036px;
+    margin:0 auto;
+    padding-top:50px;
+    color:#666;
+}
+
+#bio h2,#oeuvres h2,#interview h2{
+    color:#35393E;
+    text-transform: uppercase;
+    font-weight:normal;
+}
+
+/* biographie */
+
+#bio h2{
+    text-align: center;
+}
+
+#bio p{
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 1.1px;
+}
+
+#bio img{
+    float:left;
+    margin-right:50px;
+    box-shadow: 2px 2px 15px #aaa;
+}
+
+
+
+/* oeuvres */
+
+#oeuvres ul{
+    margin:0;
+    padding: 0;
+    list-style:none;
+}
+
+#oeuvres ul li{
+    display:inline-block;
+    margin:0;
+    padding: 0;
+    vertical-align: top;
+    margin: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+#oeuvres ul li:hover{
+   -webkit-transform: scale(1.1);  
+    -moz-transform: scale(1.1);  
+    -o-transform: scale(1.1);  
+    transform: scale(1.1); 
+    z-index: 1; 
+}
+#oeuvres ul li figure{
+    margin:0;
+    padding:0;
+    position:relative;
+}
+
+#oeuvres ul li figure img{
+    width:200px;
+    height:300px;
+}
+
+#oeuvres ul li figure figcaption{
+    width:100%;
+    text-align: center;
+    color:white;
+    background-color: rgba(1,1,1,0.8);
+    padding: 5px; 
+    position:absolute;
+    bottom:5px;
+    display:none;
+}
+
+#oeuvres ul li figure:hover figcaption{
+    display:block;
+}
+#oeuvres ul li figure figcaption h3{
+    font-weight:normal;
+    font-size:1em;
+    margin:0;
+    padding:0;
+
+}
+
+#oeuvres ul li figure figcaption .date{
+    margin:0;
+    padding:0;
+    font-style: italic;
+    font-size:0.9em;
+    color:#ddd;
+}
+
+/** interview **/
+
+#interview video{
+margin: 0 auto; 
+display:block;
+}
+
+#interview #legend{
+    margin-top:20px;
+    text-align: center;
+    margin-bottom:150px;
+}
+
+#interview #legend a{
+    color:black;
+    text-decoration: none;
+}
+
+#interview #legend a:hover{
+   text-decoration: underline;
 }

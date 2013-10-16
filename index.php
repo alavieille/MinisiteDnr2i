@@ -17,6 +17,10 @@ switch($codeAction) {
         $content = file_get_contents("informations/accueil.frg.html");
     break;
     
+    case 'auteur':
+        $content = file_get_contents("informations/auteur.frg.html");
+      break;
+      
     case "carte" :
         $content= file_get_contents("ui/fragments/map.frg.html");
     break;
