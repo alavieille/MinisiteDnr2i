@@ -20,7 +20,10 @@ switch($codeAction) {
     case 'auteur':
         $content = file_get_contents("informations/auteur.frg.html");
       break;
-      
+    
+    case "famille":
+        $content = file_get_contents("informations/famille.frg.html");
+      break;
     case "carte" :
         $content= file_get_contents("ui/fragments/map.frg.html");
     break;
