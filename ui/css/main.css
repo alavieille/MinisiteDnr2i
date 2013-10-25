@@ -31,7 +31,7 @@ author : amaury lavieille
 body{
     background-color: #EAEAEA;
     margin:0;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', 'Helvetica', 'sans-serif';
 }
 
 #wrapper{
@@ -74,18 +74,27 @@ body{
     font-size:1em;
     text-transform: uppercase;
     line-height: 50px;
-    font-weight: normal;
+    font-weight:400;
+    letter-spacing:0;
 }
 
 #header nav ul li a{
-    text-decoration:none;
-    color:#505459;
+
     display:block;
+    text-decoration:none;
+    color:#bbb;
+    transition:color 200ms linear;
+    -webkit-transition: color 200ms linear;
 }
 
+#header nav ul li a.active{
+    color:#222;
+}
+
+
+
 #header nav ul li:hover a{
-    color:black;
-    font-weight: bold;
+     color:#222;
 }
 
 /***************
@@ -197,9 +206,10 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     font-size:3em;
     text-transform: uppercase;
     line-height: 50px;
-    font-weight:normal;
+    font-weight:600;
     text-align:center;
-    letter-spacing:10px;
+    letter-spacing:0.5em;
+    text-shadow: 1px 1px 10px black ;
     margin:0;
     padding: 100px 0;
     position:relative;
@@ -226,6 +236,8 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 
 .acc-content{
     min-height:250px;
+    //max-width:1036px;
+    //width:100%;
     width:1036px;
     margin:auto;
     color:white;
@@ -235,29 +247,36 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 .acc-content p{
     margin:0;
     padding:10px;
-    letter-spacing: 1px;
-    color:#666;
     width:500px;
     display:table-cell;
-    line-height: 30px;
     height:250px;
+
     vertical-align: middle;
+    color:#333333;
     text-indent:10px;
     text-align:justify;
-   /*font-style:justify;*/
+
+    font-weight:300;
+    letter-spacing:-0.015em;
+    line-height:30px;
+
 }
 
 .acc-content p .emphase{
     font-size:1.5em;
-    font-weight:bold;
     clear:both;
-    color:#35393E;
+    color:#0d0d0d;
     text-indent: 50px;
+    font-weight: 650;
   
 }
 
 .acc-content p a{
     color:black;
+}
+
+.acc-content p a:hover{
+    color:brown;
 }
 
 .acc-content p img{
@@ -273,12 +292,8 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 }
 
 #presentation{
-    background-color:#eee;
+    background-color:white;
     z-index:-1;
-}
-
-#presentation .acc-content a:hover{
-    color:brown;
 }
 
 
@@ -290,51 +305,27 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 }
 
 #serie{
-    background-color:#D6D6D6;
+    background-color:white;
     z-index:-1;
-}
-
-#serie .acc-content p{
-    color:#777777;
-}
-
-#serie .acc-content a{
-    color:#35393E;
-}
-
-#serie .acc-content a:hover{
-    color:brown;
 }
 
 
 /* section book */
 #book{
-    background-color:#868686;
+    background-color:#efefef;
     z-index:-1;
 }
 
 .sct-accueil#book h2:before{   
       background-image: url("../images/background/background_pres3.png");
-      background-color:#858181;
-}
-
-#book .acc-content p{
-    color:#EAEAEA;
-}
-
-#book .acc-content a{
-    color:white;
-}
-
-#book .acc-content a:hover{
-    color:#000;
+      background-color:#949494;
 }
 
 #book .acc-content p{
     width:100%;
- 
- 
 }
+
+
 #book .acc-content img{
     margin-left:30px;
     float:right;
@@ -366,7 +357,6 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 #bio p{
     text-align: center;
     line-height: 25px;
-    letter-spacing: 1.1px;
 }
 
 #bio img{
@@ -428,10 +418,11 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     display:block;
 }
 #oeuvres ul li figure figcaption h3{
-    font-weight:normal;
+    font-weight:400;
     font-size:1em;
     margin:0;
     padding:0;
+    text-shadow: 1px 1px 10px black;
 
 }
 
@@ -487,7 +478,8 @@ display:block;
     margin:20px;
     display:inline-block;
     height:300px;
-
+    
+    -moz-transform: translateZ(0);
     perspective: 1800px;
     -webkit-perspective: 1800px;
     transform-style: preserve-3d;
@@ -500,7 +492,9 @@ display:block;
 #book_family .book{
     position: absolute;
     overflow: visible !important;
-
+    
+    width:100%;
+    height: 100%;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transition : transform 0.5s ease 0s;
@@ -508,6 +502,7 @@ display:block;
 
         
 }
+
 
 #book_family .book:hover{
     cursor:pointer;
@@ -517,8 +512,9 @@ display:block;
 }
 
 #book_family .cover{
-    width:200px;
-    height: 300px;
+        
+    width:100%;
+    height: 100%;
     background:#F9E5A3;
     position:absolute;
 
@@ -530,7 +526,7 @@ display:block;
 }
 
 #book_family .book .cover:after{
-    background: none repeat scroll 0 0 rgba(255, 200, 0, 0.2);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
     bottom: 0;
     box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
     content: " ";
@@ -546,11 +542,12 @@ display:block;
     font-weight: normal;
     letter-spacing: 1.2px;
     padding-top:20px;
+    margin-top:0;
 }
 
 #book_family .book .left{
     display:block;
-    height:300px;
+    height:100%;
     width:40px;
     color:white;
     position:absolute;
@@ -561,15 +558,19 @@ display:block;
     transform: rotate3d(0, 1, 0, -90deg);
     -webkit-transform: rotate3d(0, 1, 0, -90deg);
 }
+#book_family .book .left a{
+    text-decoration: none;
+}
 
 #book_family .book .left h4{
     color:white;
     width:300px;
-    height:40px;
     line-height: 40px;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 1.1px;
+     margin-top:0;
+     padding-left:10px;
     transform: rotate(90deg) translateY(-40px);
     -webkit-transform: rotate(90deg) translateY(-40px);
     transform-origin: 0 0 0;
@@ -577,17 +578,55 @@ display:block;
 }
 
 #book_family .book .back{ 
-    height:300px;
-    width:200px;
+    width:100%;
+    height: 100%;
     background:#FFD573;
     color:white;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-size:0.9em;
+    text-align: justify;
+    line-height: 25px;
     border: 2px solid white;
-
-
+    background-image: url("../images/book_family/backBook.png");
+    
+    font-family: serif;
     transform: rotate3d(0, 1, 0, -180deg) translate3d(0px, 0px, 20px);
     -webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(0px, 0px, 20px);
+}
 
+#book_family .book .back a{ 
+    padding:20px;
+}
 
+#book_family .book .back:after{
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
+    bottom: 0;
+    box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+    content: " ";
+    left: 10px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+
+#book_family .book .back p{
+    margin-top:0;
+}
+
+#book_family .book .back p:nth-child(-n+2){
+    text-indent: 20px;
+}
+
+#book_family .book .back p:nth-child(-n+2):first-letter{
+    font-size: 1.6em;
+}
+
+#book_family .book .back .devise{
+    text-align: center;
+    font-style: italic;
+    font-size:1.2em;
+    letter-spacing: 2px;
 }
 
 #book_family li:target .book{
