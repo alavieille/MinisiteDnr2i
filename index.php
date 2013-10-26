@@ -25,7 +25,7 @@ switch($codeAction) {
         $content = file_get_contents("informations/famille.frg.html");
       break;
     case "carte" :
-        $content= file_get_contents("ui/fragments/map.frg.html");
+        $content= file_get_contents("informations/map.frg.html");
     break;
         
 }

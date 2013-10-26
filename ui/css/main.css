@@ -197,6 +197,100 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     left: -100%;
 }
 
+/* legende */
+
+#mapLegende{
+    width:1036px;
+    margin:10px auto;
+    margin-bottom: 80px;
+}
+
+#mapLegende h2{
+    color:#35393E;
+    text-transform: uppercase;
+    font-weight:normal; 
+}
+
+#mapLegende ul{
+    list-style: none;
+    padding: 0;
+}
+#mapLegende ul li{
+    margin:10px;
+    display: inline-block;
+    width:45%;
+    vertical-align: top;
+}
+#mapLegende ul .puceLegende{
+    background: url("../images/legende.png") no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    text-indent: -9999px;
+    margin-right: 20px;
+}
+
+#mapLegende ul li a{
+    text-decoration: none;
+    font-style: italic;
+    color:#555;
+}
+
+#mapLegende ul li #puceNoir{
+    background-position: -5px -5px;
+}
+
+#mapLegende ul li #puceGris{
+    background-position: -130px -5px;
+}
+
+#mapLegende ul li #puceJaune{
+    background-position: -30px -5px;
+}
+
+#mapLegende ul li #puceBleuClair{
+    background-position: -180px -5px;
+}
+
+#mapLegende ul li #puceBleu{
+    background-position: -205px -5px;
+}
+
+
+#mapLegende ul li #puceRouge{
+    background-position: -230px -5px;
+}
+
+
+#mapLegende ul li #puceVert{
+    background-position: -255px -5px;
+}
+
+
+#mapLegende ul li #puceJauneClair{
+    background-position: -55px -5px;
+}
+
+
+#mapLegende ul li #puceHachure{
+    background-position: -305px -5px;
+}
+
+
+#mapLegende ul li #puceOrange{
+    background-position: -280px -5px;
+}
+
+#mapLegende ul li #puceMarron{
+    background-position: -80px -5px;
+}
+
+
+#mapLegende ul li #puceViolet{
+    background-position: -105px -5px;
+}
+
+
 /***************
      Accueil 
 ***************/
@@ -309,6 +403,11 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     z-index:-1;
 }
 
+.acc-content .source{
+    display: block;
+    font-style: italic;
+    height: 10px
+}
 
 /* section book */
 #book{
