@@ -14,4 +14,21 @@
             <?php echo $content; ?>
         </div>
     </body>
+
+    <script>
+            // code js , page courante
+            var url = document.location.href;
+            url = url.split("/");
+            url = url[url.length-1];
+
+            if (url == "index.php") url = "index.php?page=accueil"; // par defaut 
+ 
+            var linkNav = document.querySelectorAll("#header nav a");
+            for (var i=0; i<linkNav.length; i++) {
+                if (linkNav[i].getAttribute("href") == url ){
+                    linkNav[i].className = "active";
+                }
+
+            }
+    </script>
 </html>

@@ -20,6 +20,9 @@ author : amaury lavieille
     box-sizing: border-box;
 }
 
+img{
+    border:none;
+}
 .clearer{
     height:0px;
     clear:both;
@@ -88,7 +91,8 @@ body{
 }
 
 #header nav ul li a.active{
-    color:#222;
+    color:#666;
+    font-weight: 700;
 }
 
 
