@@ -382,7 +382,7 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 
 /* section presentation */
 .sct-accueil#presentation h2:before{   
-      background-image: url("../images/background/background_pres2.png");
+      background-image: url("../images/background_accueil/background_pres2.png");
 }
 
 #presentation{
@@ -394,7 +394,7 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 /* section serie */
 
 .sct-accueil#serie h2:before{   
-      background-image: url("../images/background/background_pres.png");
+      background-image: url("../images/background_accueil/background_pres.png");
       background-color:#706153;
 }
 
@@ -416,7 +416,7 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 }
 
 .sct-accueil#book h2:before{   
-      background-image: url("../images/background/background_pres3.png");
+      background-image: url("../images/background_accueil/background_pres3.png");
       background-color:#949494;
 }
 
