@@ -4,7 +4,8 @@
         <title><?php echo $title; ?></title>
         <meta charset="UTF-8">
         <link rel="icon" href="entrepot/favicon.ico" />
-        <link rel="stylesheet" href="ui/css/main.css" media="all"/>
+        <link rel="stylesheet" href="ui/css/main.css" media="all"/>        
+        <link rel="stylesheet" href="ui/css/responsive.css" media="all"/>
     </head>
     <body>
         <header id="header"><!-- header -->
@@ -21,7 +22,7 @@
             url = url.split("/");
             url = url[url.length-1];
 
-            if (url == "index.php") url = "index.php?page=accueil"; // par defaut 
+            if (url == "index.php" || url == "") url = "index.php?page=accueil"; // par defaut 
  
             var linkNav = document.querySelectorAll("#header nav a");
             for (var i=0; i<linkNav.length; i++) {

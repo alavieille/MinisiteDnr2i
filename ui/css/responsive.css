@@ -1,0 +1,103 @@
+@media (max-width: 780px) {
+	
+	/** header ***/
+	#header{
+		position: relative;
+		height: auto;
+	}
+
+	#wrapper{
+    top:0px;
+	}
+	
+
+	#header nav{
+    float:none;
+    margin-right:0;
+    width:400px;
+	margin:0 auto;
+	display: block;
+
+	}
+
+
+	/*** accueil **/
+	.sct-accueil h2{
+		font-size:1.3em;
+	}
+
+	.acc-content p{
+		display: block;
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 480px) {
+	
+
+	/*** accueil **/
+
+	.acc-content p img,#book .acc-content img{
+		float:none;
+		margin-bottom: 10px;
+		display: block;
+		margin: 0 auto;
+	}
+	
+	/** map **/
+	#mapLegende ul li{
+	    width:100%;
+	}
+
+	/*** auteur ***/
+	#bio img{
+		float:none;
+		display: block;
+		margin-bottom:20px;
+		margin: 0 auto;
+	}
+
+	#header{
+		margin-bottom: 0;
+	}
+
+	#header #menuMobile{
+		 color:#bbb;
+		 text-align: center;
+		 margin-left:20px;
+		 margin-bottom:0px;
+		 padding-bottom:20px;
+		 text-transform: uppercase;
+		 display: block;
+	}
+	#header #menuMobile label{
+	    width:200px;
+	    padding: 10px 120px;
+	    text-decoration: underline;
+	}
+	#header #menuMobile label:hover{
+	    cursor:pointer;
+	    color:black;
+	}
+
+	#header nav {
+		width:100%;
+	    margin: 0;
+	    padding: 0;
+	}
+	#header nav ul{
+		display:none;
+	}
+
+	#header nav ul li{
+		display: block;
+		text-align: center;
+	}
+
+	#header #checkMenu:checked ~ ul{
+		display: block;
+	}
+}
+	
+}

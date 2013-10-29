@@ -60,6 +60,10 @@ body{
     margin-left:20px;
 }
 
+#header #checkMenu,#header #menuMobile{
+    display:none;
+}
+
 #header nav{
     float:right;
     margin-right:30px;
@@ -82,7 +86,6 @@ body{
 }
 
 #header nav ul li a{
-
     display:block;
     text-decoration:none;
     color:#bbb;
@@ -100,200 +103,6 @@ body{
 #header nav ul li:hover a{
      color:#222;
 }
-
-/***************
-     map 
-***************/
-
-
-#map{
-    background-color:#64B7C2;
-    position:relative;
-}
-
-#map #linkSource{
-    color:white;
-    margin-right:50px;
-    font-size:0.9em;
-    float:right;
-    color:#505459;
-    text-decoration:none;
-}
-
-#map #linkSource:hover{
-    color:white;
-}
-#mapContent{
-    width:1024px;
-   /*height:700px;*/
-    margin:auto;
-    position: relative;
-    overflow: hidden;
-}
-
-#mapSlide{
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-#mapContent ul{
-    position:relative;
-    width:200%;
-    padding: 0;
-    margin:0;
-    left: 0;
-    height: 100%;
-    list-style: none;
-    transition: left ease-in 0.8s; 
-}
-
-#mapContent ul li{
-    float: left;
-    padding: 0;
-    margin:0;
-}
-
-#map .arrow{
-    position: absolute;
-    top: 50%;
-    width: 28px;
-    height: 38px;
-    margin-top: -19px;
-    display: none;
-    opacity: 0.8;
-    cursor: pointer;
-    z-index: 1000;
-    opacity:0.5;
-    background: transparent url(../images/arrow.png) no-repeat;
-    text-align:justify;
-    padding-top:50px;
-    text-indent:5px;
-    transition: opacity linear 0.3s;
-    color:white;
-}
-
-#map .arrow:hover{
-    opacity:1;
-}
-
-#mapContent input{
-    display:none;
-}
-
-.sp-selector-1:checked ~ .arrow#arrowRight{
-    right: 15px;
-    display: block;
-    background-position: top right;
-}
-
-.sp-selector-2:checked ~ .arrow#arrowLeft{
-    left: 15px;
-    display: block;
-    background-position: top left;
-}
-
-input.sp-selector-1:checked ~ #mapSlide ul {
-    left: 0;
-}
-
-input.sp-selector-2:checked ~ #mapSlide ul {
-    left: -100%;
-}
-
-/* legende */
-
-#mapLegende{
-    width:1036px;
-    margin:10px auto;
-    margin-bottom: 80px;
-}
-
-#mapLegende h2{
-    color:#35393E;
-    text-transform: uppercase;
-    font-weight:normal; 
-}
-
-#mapLegende ul{
-    list-style: none;
-    padding: 0;
-}
-#mapLegende ul li{
-    margin:10px;
-    display: inline-block;
-    width:45%;
-    vertical-align: top;
-}
-#mapLegende ul .puceLegende{
-    background: url("../images/legende.png") no-repeat;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    text-indent: -9999px;
-    margin-right: 20px;
-}
-
-#mapLegende ul li a{
-    text-decoration: none;
-    font-style: italic;
-    color:#555;
-}
-
-#mapLegende ul li #puceNoir{
-    background-position: -5px -5px;
-}
-
-#mapLegende ul li #puceGris{
-    background-position: -130px -5px;
-}
-
-#mapLegende ul li #puceJaune{
-    background-position: -30px -5px;
-}
-
-#mapLegende ul li #puceBleuClair{
-    background-position: -180px -5px;
-}
-
-#mapLegende ul li #puceBleu{
-    background-position: -205px -5px;
-}
-
-
-#mapLegende ul li #puceRouge{
-    background-position: -230px -5px;
-}
-
-
-#mapLegende ul li #puceVert{
-    background-position: -255px -5px;
-}
-
-
-#mapLegende ul li #puceJauneClair{
-    background-position: -55px -5px;
-}
-
-
-#mapLegende ul li #puceHachure{
-    background-position: -305px -5px;
-}
-
-
-#mapLegende ul li #puceOrange{
-    background-position: -280px -5px;
-}
-
-#mapLegende ul li #puceMarron{
-    background-position: -80px -5px;
-}
-
-
-#mapLegende ul li #puceViolet{
-    background-position: -105px -5px;
-}
-
 
 /***************
      Accueil 
@@ -333,10 +142,9 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 
 
 .acc-content{
-    min-height:250px;
-    //max-width:1036px;
-    //width:100%;
-    width:1036px;
+    min-height:270px;
+    max-width:1024px;
+    width:100%;
     margin:auto;
     color:white;
     padding:20px;
@@ -347,7 +155,6 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     padding:10px;
     width:500px;
     display:table-cell;
-    height:250px;
 
     vertical-align: middle;
     color:#333333;
@@ -439,10 +246,12 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 ***************/
 
 #bio,#oeuvres,#interview{
-    width:1036px;
+    max-width:1024px;
+    width:100%;
     margin:0 auto;
     padding-top:50px;
     color:#666;
+    padding: 20px;
 }
 
 #bio h2,#oeuvres h2,#interview h2{
@@ -473,9 +282,12 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 /* oeuvres */
 
 #oeuvres ul{
-    margin:0;
+    margin:0 auto;
     padding: 0;
     list-style:none;
+    width:100%;
+    padding: 0 auto;
+
 }
 
 #oeuvres ul li{
@@ -542,6 +354,8 @@ input.sp-selector-2:checked ~ #mapSlide ul {
 #interview video{
 margin: 0 auto; 
 display:block;
+max-width: 600px;
+width:100%;
 }
 
 #interview #legend{
@@ -567,7 +381,8 @@ display:block;
     padding: 0;
     margin: 0;
     list-style: none;
-    width:1036px;
+    max-width:1024px;
+    width:100%;
     padding-top:20px;
     margin:auto;
     
@@ -831,5 +646,205 @@ display:block;
 
 #book_family #greyjoy .left, #book_family #greyjoy .back{
     background-color:#151515;
+}
+
+/***************
+     map 
+***************/
+
+
+#map{
+    background-color:#64B7C2;
+    position:relative;
+}
+
+#map #linkSource{
+    color:white;
+    margin-right:50px;
+    font-size:0.9em;
+    float:right;
+    color:#505459;
+    text-decoration:none;
+}
+
+#map #linkSource:hover{
+    color:white;
+}
+#mapContent{
+    max-width:1024px;
+    width:100%;
+   /*height:700px;*/
+    margin:auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#mapSlide{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#mapContent ul{
+    position:relative;
+    width:200%;
+    padding: 0;
+    margin:0;
+    left: 0;
+    height: 100%;
+    list-style: none;
+    transition: left ease-in 0.8s; 
+}
+
+#mapContent ul li{
+    float: left;
+    padding: 0;
+    margin:0;
+    width:50%;
+}
+
+#mapContent img{
+    width:100%;
+}
+#map .arrow{
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 38px;
+    margin-top: -19px;
+    display: none;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 1000;
+    opacity:0.5;
+    background: transparent url(../images/arrow.png) no-repeat;
+    text-align:justify;
+    padding-top:50px;
+    text-indent:5px;
+    transition: opacity linear 0.3s;
+    color:white;
+}
+
+#map .arrow:hover{
+    opacity:1;
+}
+
+#mapContent input{
+    display:none;
+}
+
+.sp-selector-1:checked ~ .arrow#arrowRight{
+    right: 15px;
+    display: block;
+    background-position: top right;
+}
+
+.sp-selector-2:checked ~ .arrow#arrowLeft{
+    left: 15px;
+    display: block;
+    background-position: top left;
+}
+
+input.sp-selector-1:checked ~ #mapSlide ul {
+    left: 0;
+}
+
+input.sp-selector-2:checked ~ #mapSlide ul {
+    left: -100%;
+}
+
+/* legende */
+
+#mapLegende{
+    max-width:1024px;
+    width:100%;
+    margin:10px auto;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+#mapLegende h2{
+    color:#35393E;
+    text-transform: uppercase;
+    font-weight:normal; 
+}
+
+#mapLegende ul{
+    list-style: none;
+    padding: 0;
+}
+#mapLegende ul li{
+    margin:10px;
+    display: inline-block;
+    width:45%;
+    vertical-align: top;
+}
+#mapLegende ul .puceLegende{
+    background: url("../images/legende.png") no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    text-indent: -9999px;
+    margin-right: 20px;
+}
+
+#mapLegende ul li a{
+    text-decoration: none;
+    font-style: italic;
+    color:#555;
+}
+
+#mapLegende ul li #puceNoir{
+    background-position: -5px -5px;
+}
+
+#mapLegende ul li #puceGris{
+    background-position: -130px -5px;
+}
+
+#mapLegende ul li #puceJaune{
+    background-position: -30px -5px;
+}
+
+#mapLegende ul li #puceBleuClair{
+    background-position: -180px -5px;
+}
+
+#mapLegende ul li #puceBleu{
+    background-position: -205px -5px;
+}
+
+
+#mapLegende ul li #puceRouge{
+    background-position: -230px -5px;
+}
+
+
+#mapLegende ul li #puceVert{
+    background-position: -255px -5px;
+}
+
+
+#mapLegende ul li #puceJauneClair{
+    background-position: -55px -5px;
+}
+
+
+#mapLegende ul li #puceHachure{
+    background-position: -305px -5px;
+}
+
+
+#mapLegende ul li #puceOrange{
+    background-position: -280px -5px;
+}
+
+#mapLegende ul li #puceMarron{
+    background-position: -80px -5px;
+}
+
+
+#mapLegende ul li #puceViolet{
+    background-position: -105px -5px;
 }
 
