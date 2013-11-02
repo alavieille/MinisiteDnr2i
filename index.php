@@ -2,6 +2,7 @@
 
 $content = "";
 
+
 // action
 if ( isset($_GET['page']) ) {
    $codeAction = $_GET['page'];
@@ -9,6 +10,7 @@ if ( isset($_GET['page']) ) {
 else {
     $codeAction = "accueil";
 }
+
 
 
 // switch action 
@@ -27,14 +29,42 @@ switch($codeAction) {
     case "carte" :
         $content= file_get_contents("informations/map.frg.html");
     break;
-        
+
+    case 'livre':
+        try {
+        // nom famille
+        $name = isset($_GET['name']) ? $_GET['name'] : "error";
+        // page
+        $page = isset($_GET['page']) ? $_GET['page'] : "0";
+
+   
+        } 
+
+
+        catch (Exception $e) {
+          $content = "erreur";
+        }
+
+
+      break;
+
+    break;
+
+    default:
+       $content = file_get_contents("informations/accueil.frg.html");
+    break;
 }
 
 
-$squelette = "ui/pages/squelette.html";$codeAction;
+
+if($codeAction == "livre")
+  $squelette = "ui/pages/squelette_book.html";
+else
+  $squelette = "ui/pages/squelette_home.html";
+
+
 $header = file_get_contents("ui/fragments/header.frg.html");
 $title = ucfirst($codeAction)." - Games of Thrones";
-
 
 ob_start();
   require_once($squelette);

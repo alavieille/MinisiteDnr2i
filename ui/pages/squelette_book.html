@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title><?php echo $title; ?></title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="entrepot/favicon.ico" />
+        <link rel="stylesheet" href="ui/css/book.css" media="all"/>  
+    </head>
+    <body>
+        <!-- bouton menu -->
+        <label onclick="" title="menu" data-icon="\2630" for="toggle-nav"></label>
+        <input id="toggle-nav" type="checkbox">
+
+        <div id="wrapper">
+            <aside> <!-- menu --> 
+                <nav>
+                  <ol>
+                      <li><a href="Histoire">Histoire</a></li>
+                      <li><a href="Membres">Membres</a></li>
+                      <li><a href="Généalogie">Généalogie</a></li>
+                      <li><a href="fff">Diplomatie</a></li>
+                  </ol>
+                </nav>
+                <div id="param">
+                    <label onclick="" for="toggle-night">nuit</label>
+                    <label onclick="" for="large-size">gros texte</label>
+                    <label onclick="" for="normal-size">normal texte</label>
+                </div>
+            
+            </aside>
+
+            <input id="toggle-night" type="checkbox">
+            <input id="large-size" type="radio" name="size">    
+            <input id="normal-size" type="radio" name="size">   
+
+            <section id="content"> <!-- content -->
+                <?php echo $content; ?>
+            </section>
+
+        </div>
+    </body>
+</html>
