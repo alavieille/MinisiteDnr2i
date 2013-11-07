@@ -1,15 +1,33 @@
+/*  
+    Style squelette principale responsive
+
+ */ 
+
+/**
+ * Sommaire
+ *
+ * 1.0 - Tablette 
+ * 2.0 - Smartphone
+ * ----------------------------------------------------------------------------
+ */
+
+
+
+/**
+ * 1.0 Tablette
+ * ----------------------------------------------------------------------------
+ */
 @media (max-width: 780px) {
 	
+	#wrapper{
+    top:0px;
+	}
+
 	/** header ***/
 	#header{
 		position: relative;
 		height: auto;
 	}
-
-	#wrapper{
-    top:0px;
-	}
-	
 
 	#header nav{
     float:none;
@@ -33,6 +51,10 @@
 
 }
 
+/**
+ * 1.0 Smartphone
+ * ----------------------------------------------------------------------------
+ */
 @media (max-width: 480px) {
 	
 
@@ -58,6 +80,7 @@
 		margin: 0 auto;
 	}
 
+	/** header **/
 	#header{
 		margin-bottom: 0;
 	}
@@ -98,6 +121,12 @@
 	#header #checkMenu:checked ~ ul{
 		display: block;
 	}
-}
 	
+	/** page famille */
+	#book_family li{
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+
+	}
 }

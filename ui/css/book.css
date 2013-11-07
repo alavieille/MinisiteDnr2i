@@ -1,3 +1,17 @@
+/*  
+    Style squelette livre famille
+
+ */ 
+
+/**
+ * Sommaire
+ *
+ * 1.0 - Bouton Menu
+ * 2.0 - Menu gauche 
+ * 3.0 - Content
+ * 4.0 - Responsive
+ * ----------------------------------------------------------------------------
+ */
 
 
 body,header,p{	
@@ -12,8 +26,16 @@ padding;0;
 	margin:0;
 }
 
+#blason{
+	position: absolute;
+	right:50px;
+	top:0px;
+}
 
-	
+/**
+ * 1.0 Bouton Menu
+ * ----------------------------------------------------------------------------
+ */
 label[title="menu"]:before{
   content:'\2630';
   background: grey;
@@ -37,18 +59,36 @@ label[title="menu"]:hover{
 	cursor:pointer;
 }
 
+#toggle-nav:checked + #wrapper aside {
+ 	transform: translateX(200px) translateZ(0px);
+ 	-webkit-transform: translateX(200px) translateZ(0px);
+}
+
+#toggle-nav:checked + #wrapper #content{
+	position:relative;
+	width:calc(100% - 200px);
+	width:-webkit-calc(100% - 200px);
+	transform: translateX(200px) translateZ(0px);
+	-webkit-transform: translateX(200px) translateZ(0px);
+	
+}
 
 #toggle-nav,#toggle-night,#normal-size,#large-size{
 	display:none;
 	margin-left:200px;
 }
 
-
+/**
+ * 2.0 Menu gauche
+ * ----------------------------------------------------------------------------
+ */
 #wrapper aside{
 	position: fixed;
 	width:200px;
+	top:0;
 	background:#222;
 	height:100%;
+	min-height: 420px;
 	margin:0;
 	padding:0;
 	color:white;
@@ -57,7 +97,19 @@ label[title="menu"]:hover{
  	-webkit-transition: all 0.8s ease 0.2s;
   	left:-200px;
 }
+#wrapper aside h1{
+	text-align: center;
+	margin:0 auto;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing: 3px;
+}
 
+#wrapper aside h1:first-letter{
+	text-transform: uppercase;
+}
+
+/** navigation **/
 #wrapper nav ol{
 	list-style:upper-roman;
 	margin-left:20px;
@@ -78,54 +130,8 @@ label[title="menu"]:hover{
 #wrapper nav ol li a:hover{
 	text-decoration: underline;
 }
-#wrapper #content{
-	display:block;
-	height: 100%;
-	transition: all 0.8s ease 0.2s;
-	-webkit-transition: all 0.8s ease 0.2s;
-	width:100%;
-	font-size:1.03em;
-	font-family:verdana, sans-serif;
-	line-height:150%;
-	text-indent:50px;
-	text-align:justify;
-	padding-top:0px;
-	background-color:#F9F9F4;
-	color:#222;
-	overflow: hidden;
-}
-#wrapper #content h2{
-	text-align:center;
-	margin-top:50px;
-	margin-bottom:100px;
-	font-weight:normal;
-	font-size:1.9em;
-	text-decoration:underline;
-	font-family:serif;
-	color:#777777;
-}
 
-
-
-#wrapper #content p{
- padding: 20px 15px;
-}
-
-
-
-#toggle-nav:checked + #wrapper aside {
- 	transform: translateX(200px) translateZ(0px);
- 	-webkit-transform: translateX(200px) translateZ(0px);
-}
-
-#toggle-nav:checked + #wrapper #content{
-	position:relative;
-	width:calc(100% - 200px);
-	width:-webkit-calc(100% - 200px);
-	transform: translateX(200px) translateZ(0px);
-	-webkit-transform: translateX(200px) translateZ(0px);
-	
-}
+/** parametre menu gauche **/
 
 aside #param{
 	position: absolute;
@@ -159,7 +165,22 @@ aside #param label:hover{
 	background: url("../images/smallSize.png") 50% no-repeat;
 }
 
+/* bouton quitter */
+#param #buttonQuit{
+	text-decoration: none;
+	color:white;
+	width:200px;
+	padding: 10px 0 ;
+	text-align: center;
+	background-color:#444;
+	display:block;
+	margin-top:20px;
+}
 
+#param #buttonQuit:hover{
+	background-color: white;
+	color:black;
+}
 #large-size:checked ~ #content p{
 	font-size:1.2em
 }
@@ -173,7 +194,236 @@ aside #param label:hover{
 	color:#ccc;
 }
 
+#toggle-night:checked ~ #content a{
+	color:white;
+}
+
 #toggle-night:checked ~ #content h2{
 	color:#ccc;
+}
+
+/**
+ * 3.0 Content
+ * ----------------------------------------------------------------------------
+ */
+
+#wrapper #content{
+	display:block;
+	height: auto;
+	transition: all 0.8s ease 0.2s;
+	-webkit-transition: all 0.8s ease 0.2s;
+	width:100%;
+	min-height: 100%;
+	font-size:1.03em;
+	font-family:verdana, sans-serif;
+	line-height:150%;
+	text-indent:50px;
+	text-align:justify;
+	padding-top:0px;
+	background-color:#F9F9F4;
+	color:#222;
+	
+}
+#wrapper #content h2{
+	text-align:center;
+	margin-top:0px;
+	padding-top:50px;
+	margin-bottom:100px;
+	font-weight:normal;
+	font-size:1.9em;
+	text-decoration:underline;
+	font-family:serif;
+	color:#777777;
+}
+
+#wrapper #content #error{
+	text-align: center;
+}
+
+#wrapper #content p{
+ padding: 20px 15px;
+}
+
+#wrapper #content a{
+	color: black;
+	text-decoration: underline;
+}
+
+#wrapper #content a:hover{
+	font-weight: bold;
+	
+}
+
+/**
+ * 4.0 Page membres
+ * ----------------------------------------------------------------------------
+ */
+
+#content #membres{
+	list-style: none;
+	padding: 0;
+}
+
+#content #membres li{
+	clear:both;
+	min-height: 100px;
+}
+
+#content #membres li p{
+	vertical-align: middle;
+}
+
+#content #membres li figure{
+	float:left;
+	margin-top: 0;
+}
+
+#content #membres li:nth-child(even) figure{
+	float:right;
+	margin-top: 0;
+}
+
+#content #membres figure figcaption{
+	text-align: center;
+}
+
+
+#content #membres p .name{
+	font-weight: bold;
+}
+
+/**
+ * 4.0 Page diplomatie
+ * ----------------------------------------------------------------------------
+ */
+
+#content #diplomatie {
+	max-width: 1000px;
+	margin: auto;
+}
+
+#content #diplomatie h4{
+	font-weight: normal;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#content #diplomatie section{
+	display: inline-block;
+	width: 47%;
+}
+
+#content #diplomatie ul{
+	list-style: none;
+	padding:0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#content #diplomatie ul li {
+	display: table-cell;
+	height: 230px;
+	text-indent: 0;
+	vertical-align: bottom;
+	width:87px;
+	padding: 0 15px;
+	text-align: center;
+	top:-100px;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	-webkit-transition: top 2s ease;
+	transition: top 2s ease;
+}
+
+#content #diplomatie ul li a{
+	display: inline-block;
+	text-align: center;
+	height: 100%;
+	line-height: 230px;
+	color: white;
+	text-decoration: none;
+
+}
+
+#content #diplomatie ul li:hover{
+	top:0px;
+}
+
+#content #diplomatie ul li.banBaratheon{
+	background-image: url("../images/banniere/baratheon.png");
+}
+
+#content #diplomatie ul li.banTyrell{
+	background-image: url("../images/banniere/tyrell.png");
+}
+
+#content #diplomatie ul li.banStark{
+	background-image: url("../images/banniere/stark.png");
+}
+
+#content #diplomatie ul li.banTully{
+	background-image: url("../images/banniere/tully.png");
+}
+
+#content #diplomatie ul li.banArryn{
+	background-image: url("../images/banniere/arryn.png");
+}
+
+#content #diplomatie ul li.banLannister{
+	background-image: url("../images/banniere/lannister.png");
+}
+
+#content #diplomatie ul li.banGreyjoy{
+	background-image: url("../images/banniere/greyjoy.png");
+}
+
+#content #diplomatie ul li.banTargaryen{
+	background-image: url("../images/banniere/targaryen.png");
+}
+
+/**
+ * 4.0 Responsive
+ * ----------------------------------------------------------------------------
+ */
+ 
+@media (max-width: 900px){
+#content #membres figure{
+	float:none !important;
+	text-align: center;
+}
+#content #diplomatie section{
+	width: 100%;
+	margin: auto;
+	display: block;
+	
+}
+
+}
+
+@media(max-width:480px){ 
+	#blason{
+	right:0px;
+	}
+	#wrapper #content h2{
+		font-size: 1.1em;
+	}
+
+}
+
+@media (max-height: 500px){
+	#wrapper aside{
+		padding-top:55px;
+	}
+	#wrapper nav ol li a{
+		padding:5px 0;
+	}
+	#param #buttonQuit{
+	margin-top:0px;
+	}
+
+	aside #param{
+		bottom:140px;
+	}
 }
 

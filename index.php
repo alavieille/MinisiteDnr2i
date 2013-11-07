@@ -31,27 +31,27 @@ switch($codeAction) {
     break;
 
     case 'livre':
-        try {
+
         // nom famille
-        $name = isset($_GET['name']) ? $_GET['name'] : "error";
-        // page
-        $page = isset($_GET['page']) ? $_GET['page'] : "0";
+        $name = isset($_GET['name']) ? $_GET['name'] : null;
+        // chapitre
+        $chapitre = isset($_GET['chapitre']) ? $_GET['chapitre'] : "histoire";
 
-   
-        } 
+        $file = "informations/livre_famille/".$name."/".$chapitre.".frg.html";
 
-
-        catch (Exception $e) {
-          $content = "erreur";
-        }
-
-
-      break;
+        if(file_exists($file))
+          $content = file_get_contents($file);
+        else
+         header('Location: index.php?page=erreur');
 
     break;
 
+    case "erreur" :
+        $content = file_get_contents("ui/fragments/error.frg.html");
+    break; 
+    
     default:
-       $content = file_get_contents("informations/accueil.frg.html");
+       header('Location: index.php?page=erreur');
     break;
 }
 

@@ -1,15 +1,27 @@
-/***********************
-         main.css 
-author : amaury lavieille 
-  --- Reset css
-0 --- Wrapper/Body
-1 --- Header 
-2 --- Map 
-3 --- Accueil 
-4 --- Auteur
-5 --- Famille
+/*  
+    Style squelette principale 
+*/ 
 
-*********************/
+/**
+ * Sommaire
+ *
+ * 1.0 - Body
+ * 2.0 - Header
+ *  2.1 - Navigation
+ * 3.0 - Content Accueil
+ *  3.1 - Section presentation
+ *  3.2 - Section serie
+ *  3.3 - Section book
+ * 4.0 - Page auteur
+ *  4.1 - Biographie
+ *  4.2 - Oeuvres
+ *  4.3 - Interview
+ * 5.0 - Page Famille
+ * 6.0 - Page Carte
+ * 7.0 - Page Erreur
+ * ----------------------------------------------------------------------------
+ */
+
 
 
 /*** restet css ****/
@@ -28,9 +40,10 @@ img{
     clear:both;
 }
 
-/***************
-     Wrapper/Body
-***************/
+/**
+ * 1.0 Body
+ * ----------------------------------------------------------------------------
+ */
 body{
     background-color: #EAEAEA;
     margin:0;
@@ -42,9 +55,10 @@ body{
     top:50px;
 }
 
-/***************
-     header 
-***************/
+/**
+ * 2.0 Header
+ * ----------------------------------------------------------------------------
+ */
 
 #header{
     background-color:white;
@@ -54,7 +68,9 @@ body{
     z-index:3;
 }
 
-/*** navigation ***/
+/**
+ * 2.1 Navigation
+ **/
 
 #header #logo{
     margin-left:20px;
@@ -104,9 +120,9 @@ body{
      color:#222;
 }
 
-/***************
-     Accueil 
-***************/
+/** 3.0 Content Accueil
+ * ----------------------------------------------------------------------------
+ */
 
 .sct-accueil h2{
     color:white;
@@ -191,7 +207,9 @@ body{
 }
 
 
-/* section presentation */
+/**
+ * 3.1 Section presentation
+ **/
 .sct-accueil#presentation h2:before{   
       background-image: url("../images/background_accueil/background_pres2.png");
 }
@@ -202,7 +220,9 @@ body{
 }
 
 
-/* section serie */
+/**
+ * 3.2  Section serie
+ **/
 
 .sct-accueil#serie h2:before{   
       background-image: url("../images/background_accueil/background_pres.png");
@@ -220,7 +240,10 @@ body{
     height: 10px
 }
 
-/* section book */
+/**
+ * 3.3  Section book
+ **/
+
 #book{
     background-color:#efefef;
     z-index:-1;
@@ -241,9 +264,9 @@ body{
     float:right;
 }
 
-/***************
-     Auteur 
-***************/
+/** 4.0 Page Auteur
+ * ----------------------------------------------------------------------------
+ */
 
 #bio,#oeuvres,#interview{
     max-width:1024px;
@@ -260,7 +283,10 @@ body{
     font-weight:normal;
 }
 
-/* biographie */
+
+/**
+ * 4.1  Biographie
+ **/
 
 #bio h2{
     text-align: center;
@@ -279,7 +305,10 @@ body{
 
 
 
-/* oeuvres */
+
+/**
+ * 4.2  Oeuvres
+ **/
 
 #oeuvres ul{
     margin:0 auto;
@@ -348,7 +377,10 @@ body{
     color:#ddd;
 }
 
-/** interview **/
+
+/**
+ * 4.3  interview
+ **/
 
 #interview video{
 margin: 0 auto; 
@@ -372,10 +404,10 @@ width:100%;
    text-decoration: underline;
 }
 
-/***************
-     Famille 
-***************/
 
+/** 5.0 Page Famille
+ * ----------------------------------------------------------------------------
+ */
 #book_family{
     padding: 0;
     margin: 0;
@@ -392,26 +424,53 @@ width:100%;
 #book_family li{
     position: relative;
     width:200px;
+    min-height:370px;
     margin:20px;
     display:inline-block;
-    height:300px;
+    text-align: center;
     
     -moz-transform: translateZ(0);
     perspective: 1800px;
     -webkit-perspective: 1800px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+    vertical-align: top;
 
 }
 
+#book_family li .linkRead{
+    position: absolute;
+    bottom : 0;
+    text-indent: 0;
+    left: 10%; 
+    padding: 20px 50px;
+    color:black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+#book_family li .linkRead:hover{
+    font-weight: bold;
+}
 
+#book_family li .linkRead:hover + .book{
+      transform: scale(1.15);
+      -webkit-transform: scale(1.15);
+}
+#book_family li .linkRead:after,#book_family li .linkRead:before{
+    content :"∼";
+}
+
+#book_family li .linkRead:hover + .book .cover{
+    z-index: 1;
+}
 
 #book_family .book{
     position: absolute;
     overflow: visible !important;
-    
-    width:100%;
-    height: 100%;
+        width:200px;
+    height:300px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transition : transform 0.5s ease 0s;
@@ -475,7 +534,7 @@ width:100%;
     transform: rotate3d(0, 1, 0, -90deg);
     -webkit-transform: rotate3d(0, 1, 0, -90deg);
 }
-#book_family .book .left a{
+#book_family .book .left>a{
     text-decoration: none;
 }
 
@@ -512,7 +571,7 @@ width:100%;
     -webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(0px, 0px, 20px);
 }
 
-#book_family .book .back a{ 
+#book_family .book .back>a{ 
     padding:20px;
 }
 
@@ -556,7 +615,7 @@ width:100%;
 }
 
 
-#book_family .book .back a ,#book_family .book .cover a{
+#book_family .book .back>a ,#book_family .book .cover>a{
     color:white;
     text-decoration:none;
     display:block;
@@ -647,9 +706,9 @@ width:100%;
     background-color:#151515;
 }
 
-/***************
-     map 
-***************/
+/** 6.0 Page Carte
+ * ----------------------------------------------------------------------------
+ */
 
 
 #map{
@@ -669,10 +728,10 @@ width:100%;
 #map #linkSource:hover{
     color:white;
 }
+
 #mapContent{
     max-width:1024px;
     width:100%;
-   /*height:700px;*/
     margin:auto;
     position: relative;
     overflow: hidden;
@@ -705,6 +764,7 @@ width:100%;
 #mapContent img{
     width:100%;
 }
+
 #map .arrow{
     position: absolute;
     top: 50%;
@@ -847,3 +907,30 @@ input.sp-selector-2:checked ~ #mapSlide ul {
     background-position: -105px -5px;
 }
 
+
+/** 7.0 Page Erreur
+ * ----------------------------------------------------------------------------
+ */
+#messError{
+    max-width: 100%;
+    width:600px;
+    margin: 0 auto;
+    color:#777;
+}
+
+#messError h4{
+    margin: 0;
+    text-align: center;
+    font-size:3em;
+    font-weight: normal;    
+    letter-spacing: 8px;
+    padding-top: 100px;
+    text-transform: uppercase;
+}
+
+#messError p{
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 10px;
+}

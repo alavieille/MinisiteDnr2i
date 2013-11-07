@@ -3,30 +3,41 @@
     <head>
         <title><?php echo $title; ?></title>
         <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width">
+
         <link rel="icon" href="entrepot/favicon.ico" />
-        <link rel="stylesheet" href="ui/css/book.css" media="all"/>  
+        <link rel="stylesheet" href="ui/css/book.css" media="all"/>   
     </head>
     <body>
+        
+
+        <!--blason -->
+        <img id="blason" src="entrepot/blason/<?php echo $name; ?>.png" alt="blason famille">
+
+        
         <!-- bouton menu -->
         <label onclick="" title="menu" data-icon="\2630" for="toggle-nav"></label>
         <input id="toggle-nav" type="checkbox">
 
         <div id="wrapper">
             <aside> <!-- menu --> 
+                <h1><?php echo $name; ?></h1>
                 <nav>
                   <ol>
-                      <li><a href="Histoire">Histoire</a></li>
-                      <li><a href="Membres">Membres</a></li>
-                      <li><a href="Généalogie">Généalogie</a></li>
-                      <li><a href="fff">Diplomatie</a></li>
+                      <li><a href="?page=livre&name=<?php echo $name; ?>&chapitre=histoire">Histoire</a></li>
+                      <li><a href="?page=livre&name=<?php echo $name; ?>&chapitre=membres">Membres</a></li>
+                      <li><a href="?page=livre&name=<?php echo $name; ?>&chapitre=diplomatie">Diplomatie</a></li>
+               
                   </ol>
                 </nav>
                 <div id="param">
                     <label onclick="" for="toggle-night">nuit</label>
                     <label onclick="" for="large-size">gros texte</label>
                     <label onclick="" for="normal-size">normal texte</label>
+                   <a href="index.php?page=famille" id="buttonQuit">Quitter</a>
                 </div>
-            
+             
             </aside>
 
             <input id="toggle-night" type="checkbox">
