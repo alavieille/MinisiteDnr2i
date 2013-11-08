@@ -146,23 +146,29 @@ aside #param label{
 	text-indent: -9999px;
 	margin: 0 5px;
 	padding: 10px;
+	background-image: url("../images/param_book.png");
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
 }
 
 aside #param label:hover{
 	background-color:#555;
 	cursor: pointer;
+
 }
 
 #param label[for="toggle-night"]{
-	background: url("../images/light.png") 50% no-repeat;
+	 background-position: -35px 5px;
 }
 
 #param label[for="large-size"]{
-	background: url("../images/largeSize.png") 50% no-repeat;
+	 background-position: 5px 5px;
 }
 
 #param label[for="normal-size"]{
-	background: url("../images/smallSize.png") 50% no-repeat;
+	background-position: -75px 5px;
 }
 
 /* bouton quitter */
