@@ -9,4 +9,3 @@ Mini site HTM5 Master DNR2I
 
 test git end
 
-fdf
